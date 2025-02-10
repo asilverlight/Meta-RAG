@@ -1,12 +1,12 @@
-# <div align="center">RAG-Blender: Retrieval-Augmented Generation Ensemble<div>
+# <div align="center">Meta-RAG: Retrieval-Augmented Generation Ensemble<div>
 
-RAG-Blender is a framework that studies the  of information from different RAG systems to complete question-answering tasks. This framework uses multiple individual generators with different external knowledge as source RAG systems. For each RAG system, a simple RAG process is first executed to obtain external knowledge and responses for the same query. Then, all the information is carefully integrated and input into the final model, with experiments conducted under both untrained and trained settings. 
+Meta-RAG is a framework that studies the  of information from different RAG systems to complete question-answering tasks. This framework uses multiple individual generators with different external knowledge as source RAG systems. For each RAG system, a simple RAG process is first executed to obtain external knowledge and responses for the same query. Then, all the information is carefully integrated and input into the final model, with experiments conducted under both untrained and trained settings. 
 
 <p align="center">
 <img src="pictures/Framework.png">
 </p>
 
-Experimental results on four widely used question-answering benchmarks show that, compared to traditional RAG systems, RAG-Blender achieves superior performance. Additional experiments demonstrate that the RAG-Blender framework has excellent generalization and information fusion capabilities. Further experimental analysis provides valuable guidance for the application of model ensembles in RAG systems.
+Experimental results on four widely used question-answering benchmarks show that, compared to traditional RAG systems, Meta-RAG achieves superior performance. Additional experiments demonstrate that the Meta-RAG framework has excellent generalization and information fusion capabilities. Further experimental analysis provides valuable guidance for the application of model ensembles in RAG systems.
 
 ## :link: Navigation
 - [Contributions](#sparkles-contribution)
@@ -16,19 +16,19 @@ Experimental results on four widely used question-answering benchmarks show that
 
 ## :sparkles: Contribution
 Our contributions are listed as follows:
-- **A Comprehensive Study**: We investigate a systematic study of RAG-Blender framework, marking the first comprehensive study of the model's capability to perform meta-inference by integrating information flow from multiple RAG systems.
+- **A Comprehensive Study**: We investigate a systematic study of Meta-RAG framework, marking the first comprehensive study of the model's capability to perform meta-inference by integrating information flow from multiple RAG systems.
 
-- **A Mathematical Model**: We first establish a mathematical model of the RAG-Blender process from an information theory perspective, preliminarily demonstrating that  RAG-Blender can effectively alleviate the uncertainty in the generation of answers.
+- **A Mathematical Model**: We first establish a mathematical model of the Meta-RAG process from an information theory perspective, preliminarily demonstrating that  Meta-RAG can effectively alleviate the uncertainty in the generation of answers.
 
-- **A Good Performance**: We validate the effectiveness of RAG-Blender in both "Standard" and "Self-Alignment" ensemble settings across four widely used QA benchmarks, demonstrating the significant advantages of RAG-Blender over vanilla RAG and strong baselines.
+- **A Good Performance**: We validate the effectiveness of Meta-RAG in both "Standard" and "Self-Alignment" ensemble settings across four widely used QA benchmarks, demonstrating the significant advantages of Meta-RAG over vanilla RAG and strong baselines.
 
-- **Full Utilization Of Diverse Information**: The experiments show that the RAG-Blender framework exhibits strong performance compared to the self-consistency method. It can fully leverage the diversity of different systems to generate answers.
+- **Full Utilization Of Diverse Information**: The experiments show that the Meta-RAG framework exhibits strong performance compared to the self-consistency method. It can fully leverage the diversity of different systems to generate answers.
 
 - **More Desirable Properties**: Detailed quantitative analyses reveal that fine-tuned small LLMs can achieve ensemble performance comparable to that of fine-tuned large LLMs. Moreover, the ensemble paradigm demonstrates strong generalization and scalability, providing a solid foundation for exploring model ensemble in RAG scenarios in future work.
 
 ## :mag_right: Main Results
 
-We conducted a total of eight experiments. Due to space limitations, we only present the results of the main experiments here. We compared the RAG-Blender method with the standard RAG method, <a href="https://aclanthology.org/2023.emnlp-main.495.pdf">FLARE</a>, <a href="https://aclanthology.org/2023.findings-emnlp.691.pdf">SKR</a>, and <a href="https://arxiv.org/pdf/2203.11171">Self-consistency</a>. The results show that our RAG-Blender framework always achieves the best performance.
+We conducted a total of eight experiments. Due to space limitations, we only present the results of the main experiments here. We compared the Meta-RAG method with the standard RAG method, <a href="https://aclanthology.org/2023.emnlp-main.495.pdf">FLARE</a>, <a href="https://aclanthology.org/2023.findings-emnlp.691.pdf">SKR</a>, and <a href="https://arxiv.org/pdf/2203.11171">Self-consistency</a>. The results show that our Meta-RAG framework always achieves the best performance.
 
 <table>
   <thead>
@@ -168,7 +168,7 @@ We conducted a total of eight experiments. Due to space limitations, we only pre
       <td><u>53.76</u></td>
     </tr>
     <tr>
-      <td>RAG-Blender with S1, S2, and S3</td>
+      <td>Meta-RAG with S1, S2, and S3</td>
       <td>Qwen2.5-7B</td>
       <td>38.70</td>
       <td>50.53</td>
@@ -182,7 +182,7 @@ We conducted a total of eight experiments. Due to space limitations, we only pre
       <td>50.09</td>
     </tr>
     <tr>
-      <td>RAG-Blender+FT</td>
+      <td>Meta-RAG+FT</td>
       <td>Qwen2.5-7B</td>
       <td><strong>47.70</strong></td>
       <td><strong>56.53</strong></td>
@@ -200,7 +200,7 @@ We conducted a total of eight experiments. Due to space limitations, we only pre
 
 ## :wrench: Installation
 
-To get started with RAG-Blender, you can clone it from Github and install (requires Python 3.9+). If you want to use vllm and sentence-transformers, you can install the optional dependencies:
+To get started with Meta-RAG, you can clone it from Github and install (requires Python 3.9+). If you want to use vllm and sentence-transformers, you can install the optional dependencies:
 
 ```bash
 # Install vllm for faster speed
@@ -232,17 +232,17 @@ From the official Faiss repository ([source](https://github.com/facebookresearch
 We conducted a total of eight experiments and a model-training experiment, the specific contents of which are as follows:
 <!-- omit in toc -->
 ### :link: Navigation
-- [Main Experiment for RAG-Blender](#main-experiment-for-rag-blender)
+- [Main Experiment for Meta-RAG](#main-experiment-for-meta-rag)
 - [the Power of Responses](#the-power-of-responses)
 - [Experiment of Information Entropy](#experiment-of-information-entropy)
 - [the Power of Ensemble Model](#the-power-of-ensemble-model)
 - [the Power of CoT](#the-power-of-cot)
 - [the Impact of System Number](#the-impact-of-system-number)
-- [the Generalizability of RAG-Blender](#the-generalizability-of-rag-blender)
+- [the Generalizability of Meta-RAG](#the-generalizability-of-meta-rag)
 - [Model Train](#model-train)
 
-### Main Experiment for RAG-Blender
-Before running the  experiments, it is necessary to obtain the results of the individual RAG systems, so the standard RAG experiment needs to be run. Under the RAG-Blender folder, run the run.py file. The second line of code below is used to test the metrics of the running results.
+### Main Experiment for Meta-RAG
+Before running the  experiments, it is necessary to obtain the results of the individual RAG systems, so the standard RAG experiment needs to be run. Under the Meta-RAG folder, run the run.py file. The second line of code below is used to test the metrics of the running results.
 
 ```bash
 CUDA_VISIBLE_DEVICES=4 python run.py --RAG_type naive --dataset_name nq --temperature 0 --top_p 0.8 --gpu_memory_utilization 0.4 --model_name qwen2.5-7b-instruct
@@ -255,7 +255,7 @@ Then, run the main experiment. Note that you need to modify the path for the pro
 CUDA_VISIBLE_DEVICES=4 python run.py --RAG_type meta --dataset_name nq --temperature 0 --top_p 0.8 --gpu_memory_utilization 0.4 --model_name qwen2.5-7b-instruct --system_prompt 0
 ```
 
-* ```--RAG_type```: This parameter is used to determine the type of experiment (standard RAG or RAG-Blender).
+* ```--RAG_type```: This parameter is used to determine the type of experiment (standard RAG or Meta-RAG).
 
 * ```--system_prompt```: This parameter is used to determine the type of system prompt. Setting it to 0 indicates the use of the simplest prompt for question-answering tasks.
 
@@ -284,7 +284,7 @@ This experiment is used to investigate the importance of individual results. We 
       <td style="text-align: center; padding: 8px;">47.60</td>
     </tr>
     <tr>
-      <td style="text-align: left; padding: 8px;">RAG-Blender</td>
+      <td style="text-align: left; padding: 8px;">Meta-RAG</td>
       <td style="text-align: center; padding: 8px;"><strong>50.53</strong></td>
       <td style="text-align: center; padding: 8px;"><strong>44.22</strong></td>
       <td style="text-align: center; padding: 8px;"><strong>34.34</strong></td>
@@ -308,7 +308,7 @@ CUDA_VISIBLE_DEVICES=4 python run.py --RAG_type SAE --dataset_name nq --temperat
 
 ### Experiment of Information Entropy
 
-In this experiment, we investigate whether the RAG-Blender framework can truly reduce the information entropy of generated answers.
+In this experiment, we investigate whether the Meta-RAG framework can truly reduce the information entropy of generated answers.
 
 The first experiment is used to calculate the information entropy of the model's output answers.
 
@@ -323,7 +323,7 @@ Note that this part of the experiment requires the model to be deployed on the G
 ### the Power of Ensemble Model
 In this part of the experiment, we attempt to change the size of the  model and repeat the experiment. We used the 0.5B, 1.5B, 3B, 7B, and 14B dialogue models from the Qwen2.5 series, as well as the 1B and 3B dialogue models from the Llama3.2 series and the 8B dialogue model from the Llama3.1 series.
 ### the Power of CoT
-In this part of the experiment, we attempt to investigate the impact of <a href="https://arxiv.org/pdf/2201.11903">CoT</a> on RAG-Blender. We restricted the model's output format in the prompt to:
+In this part of the experiment, we attempt to investigate the impact of <a href="https://arxiv.org/pdf/2201.11903">CoT</a> on Meta-RAG. We restricted the model's output format in the prompt to:
 ```jsonl
 {"reason": <reason>, "answer": <answer>}
 ```
@@ -338,10 +338,10 @@ CUDA_VISIBLE_DEVICES=4 python run.py --RAG_type best2worst --dataset_name nq --t
 ```bash
 CUDA_VISIBLE_DEVICES=4 python run.py --RAG_type worst2best --dataset_name nq --temperature 0 --top_p 0.8 --gpu_memory_utilization 0.4 --model_name qwen2.5-7b-instruct --system_prompt 0 
 ```
-### the Generalizability of RAG-Blender
-In this part of the experiment, we investigated the generalization ability of the RAG-Blender system. First, the  model was trained on the original four datasets using the information from the original three subsystems. Then, the trained model was tested on two new datasets. Additionally, keeping the datasets unchanged but replacing the external knowledge and generators of the subsystems, we conducted the experiments again.
-### the Efficiency of RAG-Blender
-In this part of the experiment, we investigated the efficiency of the RAG-Blender framework. We conducted comparative experiments for self-consistency@3, @5, and @7, and compared the results with those of RAG-Blender. 
+### the Generalizability of Meta-RAG
+In this part of the experiment, we investigated the generalization ability of the Meta-RAG system. First, the  model was trained on the original four datasets using the information from the original three subsystems. Then, the trained model was tested on two new datasets. Additionally, keeping the datasets unchanged but replacing the external knowledge and generators of the subsystems, we conducted the experiments again.
+### the Efficiency of Meta-RAG
+In this part of the experiment, we investigated the efficiency of the Meta-RAG framework. We conducted comparative experiments for self-consistency@3, @5, and @7, and compared the results with those of Meta-RAG. 
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -380,7 +380,7 @@ In this part of the experiment, we investigated the efficiency of the RAG-Blende
       <td style="text-align: center; padding: 8px;"><u>47.73</u></td>
     </tr>
     <tr>
-      <td style="text-align: left; padding: 8px;">RAG-Blender</td>
+      <td style="text-align: left; padding: 8px;">Meta-RAG</td>
       <td style="text-align: center; padding: 8px;"><strong>50.53</strong></td>
       <td style="text-align: center; padding: 8px;"><strong>44.22</strong></td>
       <td style="text-align: center; padding: 8px;"><strong>34.34</strong></td>
@@ -390,13 +390,13 @@ In this part of the experiment, we investigated the efficiency of the RAG-Blende
   </tbody>
 </table>
 
-Even with multiple samplings, self-consistency does not perform as well as RAG-Blender, which only performs four inferences in total.
+Even with multiple samplings, self-consistency does not perform as well as Meta-RAG, which only performs four inferences in total.
 
 ```bash
 CUDA_VISIBLE_DEVICES=4 python run.py --RAG_type sc --dataset_name nq --temperature 0 --top_p 0.8 --gpu_memory_utilization 0.4 --model_name qwen2.5-7b-instruct --system_prompt 0 
 ```
 ### Model Train
-In this section, we conducted training on the model for standard RAG tasks, RAG-Blender, and CoT.
+In this section, we conducted training on the model for standard RAG tasks, Meta-RAG, and CoT.
 #### Train on Standard RAG Task
 For this part of the training, we randomly and uniformly sampled from the training sets of the four datasets, obtaining a total of 10,000 training data points. We then performed <a href="https://arxiv.org/pdf/2106.09685">Lora</a> Finetune on the original aggregation model.
 ```bash
@@ -413,7 +413,7 @@ accelerate launch --config_file /your_path/MetaRAG/scripts/train/zero1_gpu.yml -
   --epoch 3 \
 ```
 #### Train on RAG Blender Task
-For this part of the training, we first extracted a total of 10,000 data points from the training sets of the four datasets. We then performed the standard RAG process using three selected generators to obtain the sub-answers and external knowledge for each question. Subsequently, similar to the inference process of RAG-Blender, we embedded all the information into a pre-written prompt and conducted Lora Finetune.
+For this part of the training, we first extracted a total of 10,000 data points from the training sets of the four datasets. We then performed the standard RAG process using three selected generators to obtain the sub-answers and external knowledge for each question. Subsequently, similar to the inference process of Meta-RAG, we embedded all the information into a pre-written prompt and conducted Lora Finetune.
 ```bash
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 export CUDA_VISIBLE_DEVICES=7
