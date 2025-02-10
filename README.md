@@ -239,6 +239,7 @@ We conducted a total of eight experiments and a model-training experiment, the s
 - [the Power of CoT](#the-power-of-cot)
 - [the Impact of System Number](#the-impact-of-system-number)
 - [the Generalizability of Meta-RAG](#the-generalizability-of-meta-rag)
+- [the Efficiency of Meta-RAG](#the-efficiency-of-meta-rag)
 - [Model Train](#model-train)
 
 ### Main Experiment for Meta-RAG
